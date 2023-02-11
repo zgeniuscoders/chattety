@@ -3,4 +3,6 @@
     <string name="app_name_chatte">Chatte</string>
     <string name="app_name_ty">ty</string>
     <string name="app_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati explicabo eveniet, suscipit accusantium id dicta? Vel quae laudantium fuga perspiciatis. Voluptatem doloribus nam laboriosam soluta, neque itaque quo ad labore.</string>
+    <string name="next">suivant</string>
+    <string name="skip">Sauter</string>
 </resources>

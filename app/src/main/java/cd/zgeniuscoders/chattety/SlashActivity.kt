@@ -17,12 +17,13 @@ class SlashActivity : AppCompatActivity() {
 
         binding = ActivitySlashBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar!!.hide()
 
         supportActionBar?.hide()
         handler = Handler(Looper.getMainLooper())
 
         handler.postDelayed({
-            Intent(this, MainActivity::class.java).apply {
+            Intent(this, OnBoardingActivity::class.java).apply {
                 startActivity(this)
                 finish()
             }
