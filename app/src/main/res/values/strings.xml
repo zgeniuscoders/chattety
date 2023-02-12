@@ -5,4 +5,13 @@
     <string name="app_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati explicabo eveniet, suscipit accusantium id dicta? Vel quae laudantium fuga perspiciatis. Voluptatem doloribus nam laboriosam soluta, neque itaque quo ad labore.</string>
     <string name="next">suivant</string>
     <string name="skip">Sauter</string>
+    <string name="sign_in_with_google">continuer avec google</string>
+    <string name="sign_in">se connecter</string>
+    <string name="your_email_address">Votre addresse email</string>
+    <string name="dont_have">Vous n\'avez pas de </string>
+    <string name="account">compte ?</string>
+    <string name="password">Mot de passe</string>
+    <string name="username">Votre nom d\'utilisateur</string>
+    <string name="i_got">j\'ai un</string>
+    <string name="sign_up">S\'inscrire</string>
 </resources>

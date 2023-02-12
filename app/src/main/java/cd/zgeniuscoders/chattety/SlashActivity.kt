@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import cd.zgeniuscoders.chattety.activities.AuthActivity
 import cd.zgeniuscoders.chattety.databinding.ActivitySlashBinding
 
 class SlashActivity : AppCompatActivity() {
@@ -23,7 +24,7 @@ class SlashActivity : AppCompatActivity() {
         handler = Handler(Looper.getMainLooper())
 
         handler.postDelayed({
-            Intent(this, OnBoardingActivity::class.java).apply {
+            Intent(this, AuthActivity::class.java).apply {
                 startActivity(this)
                 finish()
             }
