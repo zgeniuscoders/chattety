@@ -4,19 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:gravity="center"
     android:background="@color/background"
     android:padding="@dimen/default_margin"
-    tools:context=".SlashActivity">
+    tools:context=".activities.UserPreferenceActivity">
 
-    <!--    app name -->
+
+    <!--    app logo -->
     <LinearLayout
         android:id="@+id/app_name"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_100dp"
-        android:gravity="center"
+        android:layout_marginTop="40dp"
         android:orientation="horizontal">
 
         <TextView
@@ -38,16 +36,37 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/app_auth_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/app_name"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:text="@string/app_description" />
+
+    <Spinner
+        android:id="@+id/ages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_auth_description"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="272dp"
-        android:text="@string/app_description"
-        android:textAlignment="center"
-        android:textColor="@color/dark"
-        android:textStyle="bold" />
+        android:background="@color/grey" />
+
+
+    <Spinner
+        android:id="@+id/people_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ages"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/people_type"
+        android:text="sauvegarder"
+        android:textColor="@color/dark" />
+
 </RelativeLayout>

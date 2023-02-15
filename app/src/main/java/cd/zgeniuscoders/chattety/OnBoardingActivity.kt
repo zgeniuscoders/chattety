@@ -68,7 +68,7 @@ class OnBoardingActivity : AppCompatActivity() {
             }
             if (position == onBoardingData.size) {
                 saveSharePreference()
-                val i = Intent(applicationContext, MainActivity::class.java).apply {
+                Intent(applicationContext, MainActivity::class.java).apply {
                     startActivity(this)
                 }
             }

@@ -14,4 +14,7 @@
     <string name="username">Votre nom d\'utilisateur</string>
     <string name="i_got">j\'ai un</string>
     <string name="sign_up">S\'inscrire</string>
+    <string name="errors">Errors</string>
+    <string name="web_client_id">79773863575-r6khhcckc4h0pi51hp5859d0jbaojqp5.apps.googleusercontent.com</string>
+    <!--    <string name="default_web_client_id">120074054541-8sgu0m4j25f18mg7aqo62v0un0fo4hif.apps.googleusercontent.com</string>-->
 </resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "120074054541",
+    "project_id": "chattety-7d801",
+    "storage_bucket": "chattety-7d801.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120074054541:android:8c9fa2ea2ce54c5cf26bc4",
+        "android_client_info": {
+          "package_name": "cd.zgeniuscoders.chattety"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120074054541-nqoola60hqufqg7c9bmir2k2h92d0dic.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKzvpUiL_PtAHsYuLMjHyTQfKSaiorJoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120074054541-nqoola60hqufqg7c9bmir2k2h92d0dic.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
