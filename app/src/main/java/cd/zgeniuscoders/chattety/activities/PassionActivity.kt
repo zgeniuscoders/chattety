@@ -3,18 +3,16 @@ package cd.zgeniuscoders.chattety.activities
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import cd.zgeniuscoders.chattety.OnBoardingActivity
 import cd.zgeniuscoders.chattety.databinding.ActivityPassionBinding
+import cd.zgeniuscoders.chattety.managers.UserManager
 import com.google.android.material.chip.Chip
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 
 class PassionActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPassionBinding
     private lateinit var passionsUser: ArrayList<String>
+    private lateinit var userManager: UserManager
     private var passions = arrayListOf<String>(
         "mangas",
         "anime",
@@ -44,6 +42,7 @@ class PassionActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         passionsUser = arrayListOf()
+        userManager = UserManager()
 
         for (chip in passions) {
             createChip(chip)
@@ -58,17 +57,14 @@ class PassionActivity : AppCompatActivity() {
                 } else {
                     passionsUser.remove(chip.text as String)
                 }
-                Toast.makeText(this@PassionActivity, chip.text, Toast.LENGTH_SHORT).show()
             }
         }
 
         binding.btnSave.setOnClickListener {
             val hash = HashMap<String, Any>()
-            hash["passions"] = passions
+            hash["passions"] = passionsUser
 
-            val uid = FirebaseAuth.getInstance().currentUser!!.uid
-            Firebase.firestore.collection("users").document(uid).update(hash)
-
+            userManager.upDateUser(userManager.getCurrentUser(), hash)
             Intent(this, OnBoardingActivity::class.java).apply {
                 startActivity(this)
             }

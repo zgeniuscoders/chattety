@@ -28,4 +28,12 @@ class UserRepository {
         return FirebaseAuth.getInstance().currentUser!!.uid
     }
 
+    fun upDateUser(id: String, data: HashMap<String, Any>) {
+        getUserCollection().document(id).update(data)
+    }
+
+    fun deleteUser(id: String) {
+        getUserCollection().document(id).delete()
+    }
+
 }

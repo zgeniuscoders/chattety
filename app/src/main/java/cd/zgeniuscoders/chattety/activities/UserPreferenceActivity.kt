@@ -6,41 +6,36 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import cd.zgeniuscoders.chattety.R
 import cd.zgeniuscoders.chattety.databinding.ActivityUserPreferenceBinding
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
+import cd.zgeniuscoders.chattety.managers.UserManager
 
 class UserPreferenceActivity : AppCompatActivity() {
     private lateinit var binding: ActivityUserPreferenceBinding
     private lateinit var ages: ArrayList<String>
     private lateinit var peopels: ArrayList<String>
+    private lateinit var userManager: UserManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityUserPreferenceBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        userManager = UserManager()
+
         agesPreferences()
         peopelsPreferences()
 
         binding.btnSave.setOnClickListener {
-            saveUserData()
-        }
-    }
+            val age = ages[binding.ages.selectedItemPosition]
+            val peeople = peopels[binding.peopleType.selectedItemPosition]
 
-    private fun saveUserData() {
+            val hash = HashMap<String, Any>()
+            hash["agePreference"] = age
+            hash["peoplePreference"] = peeople
 
-        val age = ages[binding.ages.selectedItemPosition]
-        val peeople = peopels[binding.peopleType.selectedItemPosition]
-
-        val hash = HashMap<String, Any>()
-        hash["agePreference"] = age
-        hash["peoplePreference"] = peeople
-
-        val uid = FirebaseAuth.getInstance().currentUser!!.uid
-        Firebase.firestore.collection("users").document(uid).update(hash)
-        Intent(this, PassionActivity::class.java).apply {
-            startActivity(this)
+            userManager.upDateUser(userManager.getCurrentUser(), hash)
+            Intent(this, PassionActivity::class.java).apply {
+                startActivity(this)
+            }
         }
     }
 

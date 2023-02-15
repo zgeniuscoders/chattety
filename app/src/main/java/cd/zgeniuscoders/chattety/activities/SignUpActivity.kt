@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AlertDialog
 import cd.zgeniuscoders.chattety.R
 import cd.zgeniuscoders.chattety.databinding.ActivitySignUpBinding
 import cd.zgeniuscoders.chattety.managers.UserManager
@@ -24,6 +25,8 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var genders: ArrayList<String>
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var userMananger: UserManager
+    private lateinit var builder: AlertDialog
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +35,11 @@ class SignUpActivity : AppCompatActivity() {
 
         supportActionBar!!.hide()
         userMananger = UserManager()
+        builder = AlertDialog.Builder(this)
+            .setTitle("Chargement...")
+            .setMessage("Veuillez patienter")
+            .setCancelable(false)
+            .create()
 
         setGender()
 
@@ -70,9 +78,11 @@ class SignUpActivity : AppCompatActivity() {
                     binding.errorTxt.visibility = View.VISIBLE
                     binding.errorTxt.text = "Le mot de passe doit contenir plus de 6 caracteres"
                 } else {
+                    builder.show()
                     signUp(email.toString(), password.toString())
                 }
             } else {
+                builder.dismiss()
                 binding.errorTxt.visibility = View.VISIBLE
                 binding.errorTxt.text = "Veuillez remplir tout les champs"
             }
@@ -103,8 +113,9 @@ class SignUpActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     saveUserToFirestore()
                 } else {
+                    builder.dismiss()
                     when (task.exception!!.message) {
-                        "Cette address email a deja ete utiliser" -> {
+                        "The email address is already in use by another account." -> {
                             binding.errorTxt.visibility = View.VISIBLE
                             binding.errorTxt.text = "Cette address email a deja ete utiliser"
                         }
@@ -120,6 +131,8 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun saveUserToFirestore() {
+
+        // save the user in firestore
         userMananger.createUser(
             User(
                 id = userMananger.getCurrentUser(),
@@ -129,6 +142,8 @@ class SignUpActivity : AppCompatActivity() {
                 gender = genders[binding.gender.selectedItemPosition]
             )
         )
+
+        // save auth share preferences
         savePreferences()
         Intent(this, UserPreferenceActivity::class.java).apply {
             startActivity(this)

@@ -1,5 +1,6 @@
 package cd.zgeniuscoders.chattety
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -20,14 +21,24 @@ class SlashActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar!!.hide()
 
-        supportActionBar?.hide()
         handler = Handler(Looper.getMainLooper())
 
+        val sharedPreferences = this.getSharedPreferences("auth", Context.MODE_PRIVATE)
+        val isAuthenticated = sharedPreferences.getBoolean("isAuth", false)
+
         handler.postDelayed({
-            Intent(this, AuthActivity::class.java).apply {
-                startActivity(this)
-                finish()
+            if (isAuthenticated) {
+                Intent(this, MainActivity::class.java).apply {
+                    startActivity(this)
+                    finish()
+                }
+            } else {
+                Intent(this, AuthActivity::class.java).apply {
+                    startActivity(this)
+                    finish()
+                }
             }
+
         }, 5000)
     }
 }

@@ -20,5 +20,12 @@ class UserManager {
         return userRepository.getCurrentUser()
     }
 
+    fun upDateUser(id: String, data: HashMap<String, Any>) {
+        userRepository.upDateUser(id, data)
+    }
+
+    fun deleteUser(id: String) {
+        userRepository.deleteUser(id)
+    }
 
 }

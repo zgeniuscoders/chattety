@@ -13,7 +13,6 @@ import com.google.android.material.tabs.TabLayout
 class OnBoardingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityOnBoardingBinding
     private lateinit var onBoardingDataViewPagerAdapter: onBoardingDataViewPagerAdapter
-    private lateinit var sharedPreferences: SharedPreferences
     var position = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,7 +53,6 @@ class OnBoardingActivity : AppCompatActivity() {
         setOnBoardingDataAdapter(onBoardingData)
 
         binding.skipBtn.setOnClickListener {
-            saveSharePreference()
             Intent(applicationContext, MainActivity::class.java).apply {
                 startActivity(this)
             }
@@ -67,7 +65,6 @@ class OnBoardingActivity : AppCompatActivity() {
                 binding.viewPager.currentItem = position
             }
             if (position == onBoardingData.size) {
-                saveSharePreference()
                 Intent(applicationContext, MainActivity::class.java).apply {
                     startActivity(this)
                 }
@@ -102,11 +99,4 @@ class OnBoardingActivity : AppCompatActivity() {
         binding.tabLayout.setupWithViewPager(binding.viewPager)
     }
 
-    private fun saveSharePreference() {
-        sharedPreferences =
-            applicationContext.getSharedPreferences("on_board", Context.MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
-        editor.putBoolean("isShowed", true)
-        editor.apply()
-    }
 }
