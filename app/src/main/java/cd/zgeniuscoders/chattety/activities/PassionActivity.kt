@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import cd.zgeniuscoders.chattety.OnBoardingActivity
 import cd.zgeniuscoders.chattety.databinding.ActivityPassionBinding
 import cd.zgeniuscoders.chattety.managers.UserManager
 import com.google.android.material.chip.Chip

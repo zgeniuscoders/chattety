@@ -3,13 +3,11 @@ package cd.zgeniuscoders.chattety.activities
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AlertDialog
-import cd.zgeniuscoders.chattety.MainActivity
 import cd.zgeniuscoders.chattety.databinding.ActivitySignInBinding
 import com.google.firebase.auth.FirebaseAuth
 

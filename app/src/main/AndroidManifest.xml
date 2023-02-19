@@ -58,14 +58,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".OnBoardingActivity"
+            android:name=".activities.OnBoardingActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".SlashActivity"
+            android:name=".activities.SlashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -78,7 +78,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="false" />
     </application>
 

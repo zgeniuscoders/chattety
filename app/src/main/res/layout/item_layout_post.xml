@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/default_margin">
 
     <ImageView
         android:id="@+id/post_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
+        android:layout_height="wrap_content"
         android:src="@drawable/post"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,7 +49,7 @@
                 android:fontFamily="@font/helvetica"
                 android:text="@string/time_ago"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -63,9 +63,10 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/love" />
+                android:id="@+id/btn_like"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/unlinke" />
 
             <TextView
                 android:id="@+id/post_like_count"
@@ -74,7 +75,7 @@
                 android:layout_gravity="center"
                 android:text="100"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

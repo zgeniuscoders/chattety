@@ -1,4 +1,4 @@
-package cd.zgeniuscoders.chattety
+package cd.zgeniuscoders.chattety.activities
 
 import android.content.Context
 import android.content.Intent
@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import cd.zgeniuscoders.chattety.activities.AuthActivity
 import cd.zgeniuscoders.chattety.databinding.ActivitySlashBinding
 
 class SlashActivity : AppCompatActivity() {

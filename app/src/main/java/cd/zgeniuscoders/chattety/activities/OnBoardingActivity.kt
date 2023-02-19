@@ -1,10 +1,9 @@
-package cd.zgeniuscoders.chattety
+package cd.zgeniuscoders.chattety.activities
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import cd.zgeniuscoders.chattety.R
 import cd.zgeniuscoders.chattety.adapters.onBoardingDataViewPagerAdapter
 import cd.zgeniuscoders.chattety.databinding.ActivityOnBoardingBinding
 import cd.zgeniuscoders.chattety.models.OnBoardingData
