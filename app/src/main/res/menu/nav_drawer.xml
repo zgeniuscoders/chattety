@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/favorite"
+        android:title="Favoris"
+        android:icon="@drawable/like"/>
+
+    <item android:id="@+id/termes"
+        android:title="@string/termes"
+        android:icon="@drawable/insurance"/>
+
+    <item android:id="@+id/privacy"
+        android:title="@string/privacy"
+        android:icon="@drawable/privacypolicy"/>
+
+    <item android:id="@+id/developper"
+        android:title="@string/developpers"
+        android:icon="@drawable/developpement"/>
+</menu>
